@@ -32,6 +32,12 @@ namespace PruebaConsola
             Console.WriteLine(mate.ToString());
             Console.WriteLine(mate2.ToString());
 
+            //creamos Carreras
+            Carrera desarrollo = new Carrera("Técnico Superior en Desarrollo de Software",3,TipoCarreraEnum.Tecnicatura);
+            Carrera profNivelInicial = new Carrera("Profesorado de Nivel Inicial", 4, TipoCarreraEnum.Profesorado);
+            Console.WriteLine(desarrollo.ToString());
+            Console.WriteLine(profNivelInicial.ToString());
+
 
             #endregion
         }
