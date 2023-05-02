@@ -1,4 +1,6 @@
 ﻿using System;
+using PruebaConsola.Class;
+using PruebaConsola.Enums;
 
 namespace PruebaConsola
 {
@@ -6,14 +8,32 @@ namespace PruebaConsola
     {
         static void Main(string[] args)
         {
-            //creamos un objeto, instanciamos la clase Persona
-            Persona fabrizio = new Persona();   
+            #region primera prueba de objetos
+            /*Persona fabrizio = new Persona();   
             ColocarTitulo();
-            PedirNombreYSaludar(fabrizio);
-            fabrizio.PerdirNombreYSaludar();
-            PedirEdadYCalcularDiasDeVida(fabrizio);
+            fabrizio.PedirNombreYSaludar();
+            fabrizio.PedirEdadYCalcularDiasDeVida();
             fabrizio.ChequearMayoriaEdad();
-            fabrizio.ImprimeLineas();
+            fabrizio.ImprimeLineas();*/
+            #endregion
+
+            #region prueba de objetos instituto
+            //[Clase] [nombre_objeto]= new [Clase]();
+            //var [nombre_objeto]= new [Clase]();
+            Materia mate=new Materia("Matemática I",TipoMateriaEnum.Anual);
+            Materia mate2 = new Materia("Matemática II", TipoMateriaEnum.Anual);
+            var copiaMate2 = mate2;
+            copiaMate2.Nombre="Matemática Financiera";
+            //comparamos objetos con el metodo Equals
+            //bool sonIguales =mate2.Equals(copiaMate2);
+            //var hash1=mate2.GetHashCode();
+            //var hash2= copiaMate2.GetHashCode();
+            //var hash3=mate.GetHashCode();
+            Console.WriteLine(mate.ToString());
+            Console.WriteLine(mate2.ToString());
+
+
+            #endregion
         }
 
         static void ColocarTitulo()
@@ -24,49 +44,9 @@ namespace PruebaConsola
             #endregion
         }
 
-        static void PedirNombreYSaludar(Persona persona)
-        {
-            Console.Write("Ingrese su nombre: ");
-            persona.nombre = Console.ReadLine();
-            Console.WriteLine("Hola " + persona.nombre + " " + persona.apellido + ", como te va?");
-            Console.WriteLine($"Hola {persona.nombre} {persona.apellido}, como te va?");
-        }
+        
 
-        static void PedirEdadYCalcularDiasDeVida(Persona persona)
-        {
-            Console.Write("Ingrese su edad: ");
-            persona.edad = Convert.ToInt32(Console.ReadLine());
-            persona.diasDeVida = persona.edad * 365;
-            Console.WriteLine($"sus días de vida aproximados son:{persona.diasDeVida}");
-        }
-    }
-    class Persona
-    {
-        public string? nombre = "";
-        public string apellido = "Ramirez";
-        private int edad = 0;
-        public int diasDeVida = 0;
-
-        public void ChequearMayoriaEdad()
-        {
-            if (diasDeVida > 6500)
-            {
-                Console.WriteLine("No se necesita autorización");
-            }
-            else
-            {
-                Console.WriteLine("Se necesita autorización de sus padres");
-            }
-        }
-        public void ImprimeLineas()
-        {
-            for (int i = 0; i < 20; i++)
-            {
-                Console.WriteLine($"Linea Nº{i + 1} {nombre}");
-            }
-        }
-
-
+       
     }
 }
 
