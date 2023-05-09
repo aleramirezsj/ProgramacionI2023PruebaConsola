@@ -8,6 +8,7 @@ namespace PruebaConsola.Class
 {
     public class Docente
     {
+
         public string Nombre { get; set; }
         public string Dirección { get; set; }
         public uint Teléfono { get; set; }

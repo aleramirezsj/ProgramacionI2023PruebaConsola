@@ -1,5 +1,6 @@
 ﻿using PruebaConsola.Enums;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace PruebaConsola.Class
         public string Nombre { get; set; }
         public int Años { get; set; }
         public TipoCarreraEnum  Tipo { get; set; }
+        private List<Materia> materias = new List<Materia>();
 
         //constructor
         public Carrera(string nombre, int años, TipoCarreraEnum tipo)
@@ -26,7 +28,18 @@ namespace PruebaConsola.Class
         //sobreescribiendo el método ToString()
         public override string ToString()
         {
-            return $"Carrera: {this.Nombre} Duración: {this.Años} años Tipo:{this.Tipo}";
+            string retorno= $"Carrera: {this.Nombre} Duración: {this.Años} años Tipo:{this.Tipo} {Environment.NewLine}";
+            retorno += $"Materias:{Environment.NewLine}";
+            foreach (var materia in materias)
+            {
+                retorno += materia.ToString()+Environment.NewLine ;
+            }
+            return retorno;
+        }
+
+        public void AgregarMateria(Materia materia)
+        {
+            materias.Add(materia);
         }
     }
 }
