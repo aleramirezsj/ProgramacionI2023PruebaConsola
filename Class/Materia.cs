@@ -11,15 +11,17 @@ namespace PruebaConsola.Class
     {
         public string Nombre { get; set; }
         public TipoMateriaEnum Tipo { get; set; }
+        public Docente Docente { get; set; }
         //constructor
-        public Materia(string nombre, TipoMateriaEnum tipo)
+        public Materia(string nombre, TipoMateriaEnum tipo, Docente docente)
         {
             this.Nombre = nombre;
             this.Tipo = tipo;
+            this.Docente = docente;
         }
         public override string ToString()
         {
-            return $"Materia: {this.Nombre} Tipo:{this.Tipo}";
+            return $"Materia: {this.Nombre} Tipo:{this.Tipo} {Environment.NewLine} {this.Docente.ToString()}";
         }
     }
 }

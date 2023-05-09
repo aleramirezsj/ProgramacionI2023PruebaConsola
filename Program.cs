@@ -17,11 +17,17 @@ namespace PruebaConsola
             fabrizio.ImprimeLineas();*/
             #endregion
 
+            //creamos Docentes
+            Docente mauri = new Docente("Mauri Mendoza", "Independencia 3520", 3498455223);
+            Docente georgi = new Docente("Georgina Brusa", "9 de julio 2222", 3498555555);
+
+            Console.WriteLine(mauri.ToString());
+
             #region prueba de objetos instituto
             //[Clase] [nombre_objeto]= new [Clase]();
             //var [nombre_objeto]= new [Clase]();
-            Materia mate=new Materia("Matemática I",TipoMateriaEnum.Anual);
-            Materia mate2 = new Materia("Matemática II", TipoMateriaEnum.Anual);
+            Materia mate=new Materia("Matemática I",TipoMateriaEnum.Anual, mauri);
+            Materia mate2 = new Materia("Matemática II", TipoMateriaEnum.Anual,georgi);
             var copiaMate2 = mate2;
             copiaMate2.Nombre="Matemática Financiera";
             //comparamos objetos con el metodo Equals
@@ -37,6 +43,8 @@ namespace PruebaConsola
             Carrera profNivelInicial = new Carrera("Profesorado de Nivel Inicial", 4, TipoCarreraEnum.Profesorado);
             Console.WriteLine(desarrollo.ToString());
             Console.WriteLine(profNivelInicial.ToString());
+
+            
 
 
             #endregion
