@@ -15,6 +15,8 @@ namespace PruebaConsola.Class
         public int Años { get; set; }
         public TipoCarreraEnum  Tipo { get; set; }
         private List<Materia> materias = new List<Materia>();
+        private List<Docente> docentes = new List<Docente>();
+
 
         //constructor
         public Carrera(string nombre, int años, TipoCarreraEnum tipo)
@@ -34,12 +36,21 @@ namespace PruebaConsola.Class
             {
                 retorno += materia.ToString()+Environment.NewLine ;
             }
+            retorno += $"Docentes:{Environment.NewLine}";
+            foreach (var docente in docentes)
+            {
+                retorno += docente.Nombre + Environment.NewLine;
+            }
             return retorno;
         }
 
         public void AgregarMateria(Materia materia)
         {
             materias.Add(materia);
+        }
+        public void AgregarDocente(Docente docente)
+        {
+            docentes.Add(docente);
         }
     }
 }

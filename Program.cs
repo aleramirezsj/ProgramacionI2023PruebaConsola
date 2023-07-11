@@ -62,7 +62,39 @@ namespace PruebaConsola
             Carrera desarrollo = new Carrera("Técnico Superior en Desarrollo de Software", 3, TipoCarreraEnum.Tecnicatura);
             desarrollo.AgregarMateria(programacion1);
             desarrollo.AgregarMateria(programacion2);
+            desarrollo.AgregarDocente(ale);
+            ale.AgregarMateria(programacion1);
+            ale.AgregarMateria(programacion2);
             Console.Write(desarrollo.ToString());
+            Console.WriteLine("****************************");
+            Console.WriteLine(ale.ToString());
+            Consola.EscribirLinea("Probando Escribir con nuestra clase en la consola");
+            Consola.EscribirLinea(2023);
+            Consola.EscribirLinea(DateTime.Now);
+            Consola.EscribirLinea(Materia.instancias);
+
+            ProbamosElOperadorTernario();
+            ProbamosElOperadorTernario2();
+
+        }
+
+        private static void ProbamosElOperadorTernario2()
+        {
+            //probamos el operador ternario usando operaciones matemáticas condicionales, simulamos la situación de descuento "mes aniversario" que tiene 10% de descuento para compras mayor a $10000 y 5% para el resto
+            Consola.Escribir("Ingrese el total de compra:");
+            float importe = Consola.LeerNumeroDecimal();
+            float importeFinal = importe > 10000 ? importe * 0.9f : importe * 0.95f;
+            Consola.EscribirLinea("El importe final es: " + importeFinal);
+
+        }
+
+        private static void ProbamosElOperadorTernario()
+        {
+            //probamos el operador ternario usando asignaciones condicionales, simulamos la situación de la entrada a la montaña rusa.
+            Consola.Escribir("Ingrese su altura en centimetros:");
+            int altura = Consola.LeerNumeroEntero();
+            string control = altura > 120 ? "Autorizado" : "No autorizado";
+            Consola.EscribirLinea(control);
         }
 
         static void ColocarTitulo()
